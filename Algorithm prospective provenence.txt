@@ -1,0 +1,42 @@
+Algorithm prospective provenance workflow
+# @begin NYPL_Curating_Menus @desc  YW with a NYPL Menu datasets
+# @in Dataset @file Menu,MenuItem,Dish,MenuPage
+# @out Narrative
+# @out OR_cleaned_dataset
+# @out Narrative
+# @out Export_clean_dataset
+ 
+# @begin Analyze @desc Analyze the datasets to find insights
+# @in Dataset @file stream:stdout
+# @out xyz @as Analyzed_Dataset @file All_datasets
+# @out Narrative
+# @end Analyze
+ 
+# @begin OpenRefine @desc DataCleaning
+# @in xyz @as Analyzed_Dataset
+
+# @out Narrative
+# @out OpenRefine_cleaned_dataset
+# @end OpenRefine
+
+# @begin Datalog_facts @desc Creation of Facts after cleaning of Dataset
+# @in OpenRefine_cleaned_dataset
+# @out Narrative
+# @out Datalog_Facts_OpenRefine 
+# @out Datalog_Facts_Manual
+# @end Datalog_facts
+
+# @begin Python @desc Data_cleaning
+# @in OpenRefine_cleaned_dataset
+# @out Narrative
+# @out Datalog_Facts_Python
+# @out Python_cleaned_dataset
+# @end Python
+ 
+# @begin SQL @desc To gather datalog facts, check IC
+# @in Python_cleaned_dataset
+# @out Export_clean_dataset
+# @out Narrative
+# @end SQL
+ 
+# @end Dataset

@@ -1,0 +1,62 @@
+Event_Currency_currency_symbol_occasion
+
+# @begin event_occasion_currency_and_currency_symbol @desc  YW with a NYPL Menu datasets
+# @in event
+# @in occasion
+# @in currency
+# @in currency_symbol
+# @out clean_event
+# @out clean_occasion
+# @out clean_currency
+# @out clean_currency_symbol
+
+# @begin Trim,Removed_Whitespace,Uppercase
+
+# @in event
+# @in occasion
+# @in currency
+# @in currency_symbol
+# @out event_1
+# @out occasion_1
+# @out currency_1
+# @out currency_symbol_1
+
+# @end Trim,Removed_Whitespace,Uppercase
+
+# @begin Updated_values_events_where_names_null_vice_versa
+
+
+# @in occasion_1
+# @in currency_1
+# @in currency_symbol_1
+# @out occasion_2
+# @out currency_2
+# @out currency_symbol_2
+
+# @end Updated_values_events_where_names_null_vice_versa
+
+# @begin Clustering_with_n_fingerprint_followed_by_n-grams
+
+# @in event_1
+# @in occasion_2
+# @out event_3
+# @out occasion_3
+# @out currency_2
+# @out currency_symbol_2
+# @end Clustering
+
+# @begin Updated_sentinal_values_to_null
+
+# @in event_3
+# @in occasion_3
+# @in currency_2
+# @in currency_symbol_2
+
+# @out clean_event
+# @out clean_occasion
+# @out clean_currency
+# @out clean_currency_symbol
+
+# @end Updated_sentinal_values_to_null
+
+# @end event_occasion_currency_and_currency_symbol
